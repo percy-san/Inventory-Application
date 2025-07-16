@@ -5,21 +5,48 @@ export { supabase, testConnection, getConnectionStatus, initializeDatabase } fro
 
 // Export database service functions
 export {
+	// Core CRUD operations
 	getAllInventoryItems,
-	getAllCategories,
+	getInventoryItemById,
 	createInventoryItem,
 	updateInventoryItem,
 	deleteInventoryItem,
-	getInventoryItemById,
+	
+	// Search and filtering
+	searchAndFilterInventoryItems,
 	searchInventoryItems,
 	getInventoryItemsByCategory,
-	getLowStockItems
+	getLowStockItems,
+	
+	// Category operations
+	getAllCategories,
+	createCategory,
+	
+	// Real-time subscriptions
+	subscribeToInventoryItems,
+	subscribeToCategories,
+	
+	// Batch operations
+	createMultipleInventoryItems,
+	updateMultipleInventoryItems,
+	
+	// Utility functions
+	getInventoryStatistics
 } from './database.js';
 
 // Export types and validation functions
 export {
+	// Validation functions
 	validateInventoryItem,
 	validateCategory,
+	
+	// Data transformation utilities
 	transformInventoryItem,
-	isLowStock
+	transformFormToInventoryItem,
+	createNewInventoryItem,
+	
+	// Utility functions
+	isLowStock,
+	filterInventoryItems,
+	sortInventoryItems
 } from './types.js';
